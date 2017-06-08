@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/property', 'PropertyController');
+Route::post('/property/{property}/media/store', 'MediaController@store');
+Route::delete('/property/{property}/media/delete/{id?}', 'MediaController@destroy');
